@@ -66,67 +66,30 @@
                     <div class="row">
                         <div class="col-12">
                             <pre class="line-numbers">
-                            <code class="language-markup">
-                                   
+                                <code class="language-markup">
+                                    &lt;div class="row"&gt;
+                                        &lt;div class="col"&gt;&lt;input id="building1" type="text" class="form-control inputClass" placeholder="Building 1" onfocus="this.placeholder=''" onblur="this.placeholder='Building 1'" /&gt;&lt;/div&gt;
+                                        &lt;div class="col"&gt;&lt;input id="building2" type="text" class="form-control inputClass" placeholder="Building 2" onfocus="this.placeholder=''" onblur="this.placeholder='Building 2'" /&gt;&lt;/div&gt;
+                                        &lt;div class="col"&gt;&lt;input id="building3" type="text" class="form-control inputClass" placeholder="Building 3" onfocus="this.placeholder=''" onblur="this.placeholder='Building 3'" /&gt;&lt;/div&gt;
+                                        &lt;div class="col"&gt;&lt;input id="building4" type="text" class="form-control inputClass" placeholder="Building 4" onfocus="this.placeholder=''" onblur="this.placeholder='Building 4'" /&gt;&lt;/div&gt;
+                                        &lt;div class="col"&gt;&lt;input id="building5" type="text" class="form-control inputClass" placeholder="Building 5" onfocus="this.placeholder=''" onblur="this.placeholder='Building 5'" /&gt;&lt;/div&gt;
+                                        &lt;div class="col"&gt;&lt;input id="building6" type="text" class="form-control inputClass" placeholder="Building 6" onfocus="this.placeholder=''" onblur="this.placeholder='Building 6'" /&gt;&lt;/div&gt;
 
-            &lt;body&gt;
+                                    &lt;/div&gt;
+                                    &lt;br /&gt;
+                                    &lt;div class="row"&gt;
+                                        &lt;div class="col-2"&gt;&lt;/div&gt;
+                                        &lt;div class="col-3"&gt; &lt;button id="shButton" class="btn btn-primary shButton btnWide"&gt;Solve &lt;/button&gt;&lt;/div&gt;
+                                        &lt;div class="col-2"&gt;&lt;/div&gt;
+                                        &lt;div class="col-3"&gt; &lt;button id="clrButton" class="btn btn-danger shButton btnWide"&gt;Clear&lt;/button&gt;&lt;/div&gt;
+                                        &lt;div class="col-2"&gt;&lt;/div&gt;
+                                    &lt;/div&gt;
 
-                &lt;div class="container" &gt;
-                    &lt;div class="row"&gt;
-                        &lt;div class="container"&gt;
-                            &lt;div class="row"&gt;
-                                &lt;div class="col-10 h1 text-center"&gt; FIZZBUZZ &lt;/div&gt;
-                            &lt;/div&gt;
-                        &lt;/div&gt;
+                                    &lt;hr class="Sep" /&gt;
 
-
-                        &lt;br /&gt;
-                        &lt;div class="container"&gt;
-                            &lt;div class="row"&gt;
-                                &lt;div class="col-2"&gt;&lt;/div&gt;
-                                &lt;div class="col-4 text-left txtWide"&gt; Enter Fizz number: &lt;/div&gt;
-                                &lt;div class="col-4 text-left txtWide"&gt; &lt;input id="input1" /&gt;&lt;/div&gt;
-                                &lt;div class="col-2"&gt;&lt;/div&gt;
-                                &lt;br /&gt;
-                            &lt;/div&gt;
-
-                            &lt;br /&gt;
-
-                            &lt;div class="row"&gt;
-                                &lt;div class="col-2"&gt;&lt;/div&gt;
-                                &lt;div class="col-4 text-left txtWide"&gt; Enter Buzz number: &lt;/div&gt;
-                                &lt;div class="col-4 text-left txtWide"&gt; &lt;input id="input2" /&gt;&lt;/div&gt;
-                                &lt;div class="col-2"&gt;&lt;/div&gt;
-                                &lt;br /&gt;
-                            &lt;/div&gt;
-                        &lt;/div&gt;
-
-                        &lt;br /&gt;
-                        &lt;div class="container"&gt;
-                            &lt;div class="row"&gt;
-                                &lt;h1&gt; &lt;/h1&gt;
-                            &lt;/div&gt;
-                        &lt;/div&gt;
-                        &lt;div class="container-md"&gt;
-                            &lt;div class="row"&gt;
-                                &lt;button id="btn1" class="btn btn-primary btn-block txtWide" onclick="buzzIt()"&gt;
-                                Buzz It &lt;/button&gt;
-                            &lt;/div&gt;
-                        &lt;/div&gt;
-
-                        &lt;br /&gt;
-                        &lt;div class="container"&gt;
-                            &lt;div class="row"&gt;
-                                &lt;div class="col-12 txtWide"&gt;
-                                    &lt;h4 id="output1"&gt;&lt;/h4&gt;
-                                &lt;/div&gt;
-
-                            &lt;/div&gt;
-                        &lt;/div&gt;                                                                                                    
-            &lt;/body&gt;
-
-                               
-
+                                    &lt;div class="row"&gt;
+                                        &lt;div class="col"&gt;&lt;h4 id="Out"&gt;&lt;/h4&gt;&lt;/div&gt;
+                                    &lt;/div&gt;
 
                                 </code>
 </pre>
@@ -140,35 +103,51 @@
                             <pre class="line-numbers">
                             <code class="language-js">
                                  
-                            <script>
-                                function FizzBuzz(value1, value2) {
-                                    let returnValue = "";
-                                    for (let i = 1; i <= 100; i++) {
-                                        if (i % value1 == 0 && i % value2 == 0) {
-                                            returnValue += "FIZZBUZZOOKAH ";
-                                        }
-                                        else if (i % value1 == 0) {
-                                            returnValue += "fizz ";
-                                        }
-                                        else if (i % value2 == 0) {
-                                            returnValue += "buzz ";
-                                        }
-                                        else {
-                                            returnValue += `${i} `;
-                                        }
-                                    }
-                                    return returnValue;
-                                }
+                                <script>
+                                    // when the "sovle" button is clicked
+                                    $("#shButton").on("click", function () {
+                                        // step1: get the data from user
+                                        let bld1 = parseInt($("#building1").val()); let bld2 = parseInt($("#building2").val()); let bld3 = parseInt($("#building3").val()); let bld4 = parseInt($("#building4").val()); let bld5 = parseInt($("#building5").val()); let bld6 = parseInt($("#building6").val());
 
-                                function buzzIt() {
-                                    let output = "";
-                                    let val1 = document.getElementById("input1").value;
-                                    let val2 = document.getElementById("input2").value;
-                                    output = FizzBuzz(val1, val2);
-                                    document.getElementById("output1").innerHTML = output;
+                                        // step2: create an array with the data
+                                        let buildings = [bld1, bld2, bld3, bld4, bld5, bld6];
 
-                                }
-</script>
+                                        // step3: the algo
+                                        let goodViews = [];
+                                        let orderViews = [];
+                                        let tallestBld = 0;
+                                        let currentBld = 0;
+
+                                        for (let i = 0; i <= buildings.length - 1; i++) { // start from the 2nd in the array, because the 1st building from the left is automatically able to see the sunset
+                                            currentBld = buildings[i];
+                                            if (currentBld > tallestBld) {
+                                                goodViews.push(currentBld);
+                                                tallestBld = currentBld;
+                                                orderViews.push(i);
+                                            }
+
+                                        }
+
+                                        if (goodViews.length == 1) {
+                                            $("#Out").text(`With the input given, there is only 1 building that can see the sunset, its value is ${goodViews}`);
+                                        } else if (goodViews.length > 1) {
+                                            $("#Out").text(`With the input given, there are ${goodViews.length} building that can see the sunset, their values are ${goodViews}. And their positions are ${orderViews}`);
+                                        }
+
+                                    });
+
+                                    // when the "clear" button is clicked
+                                    $("#clrButton").on("click", function () {
+                                        $("#building1").val("");
+                                        $("#building2").val("");
+                                        $("#building3").val("");
+                                        $("#building4").val("");
+                                        $("#building5").val("");
+                                        $("#building6").val("");
+                                        $("#building7").val("");
+                                        $("#Out").text("");
+                                    })
+                                </script>
                                 
                                 </code>
 </pre>
