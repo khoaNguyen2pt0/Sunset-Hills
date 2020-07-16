@@ -139,7 +139,7 @@
                 if (currentBld > tallestBld) {
                     goodViews.push(currentBld);
                     tallestBld = currentBld;
-                    orderViews.push(i);
+                    orderViews.push(i + 1);
                 }
 
             }
@@ -147,7 +147,7 @@
             if (goodViews.length == 1) {
                 $("#Out").text(`With the input given, there is only 1 building that can see the sunset, its value is ${goodViews}`);
             } else if (goodViews.length > 1) {
-                $("#Out").text(`With the input given, there are ${goodViews.length} building that can see the sunset, their values are ${goodViews}. And their positions are ${orderViews}`);
+                $("#Out").text(`With the input given, there are ${goodViews.length} building that can see the sunset, their values are ${goodViews}. And their positions are ${orderViews}.`);
             }
 
         });
