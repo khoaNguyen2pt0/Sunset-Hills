@@ -85,7 +85,11 @@
         <div class="row">
             <div class="col-lg-12 text-center">
                 <h1 class="mt-5">Sunset Hills</h1>
-                <p class="lead">Description of the challenge</p>
+                <p>
+                    We have 6 buildings on the tallest hill in town. You decide how tall you want our 6 buildings to be by giving each of them the number of floors, using the forms below.
+                    The sun sets to the West, so by default the left most buidling will always see the sunset since no other building blocks it.
+                </p>
+                
             </div>
         </div>
         <br />
@@ -146,9 +150,9 @@
             }
 
             if (goodViews.length == 1) {
-                $("#Out").text(`With the input given, there is only 1 building that can see the sunset, its value is ${goodViews}`);
+                $("#Out").text(`With the input given, there is only 1 building that can see the sunset, and their positions are ${orderViews}.`);
             } else if (goodViews.length > 1) {
-                $("#Out").text(`With the input given, there are ${goodViews.length} building that can see the sunset, their values are ${goodViews}. And their positions are ${orderViews}.`);
+                $("#Out").text(`With the input given, there are ${goodViews.length} building that can see the sunset, and their positions are ${orderViews}.`);
             }
 
         });
