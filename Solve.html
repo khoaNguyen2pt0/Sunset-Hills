@@ -94,12 +94,12 @@
         </div>
         <br />
         <div class="row">
-            <div class="col"><input id="building1" type="text" class="form-control inputClass" placeholder="Building 1" onfocus="this.placeholder=''" onblur="this.placeholder='Building 1'" /></div>
-            <div class="col"><input id="building2" type="text" class="form-control inputClass" placeholder="Building 2" onfocus="this.placeholder=''" onblur="this.placeholder='Building 2'" /></div>
-            <div class="col"><input id="building3" type="text" class="form-control inputClass" placeholder="Building 3" onfocus="this.placeholder=''" onblur="this.placeholder='Building 3'" /></div>
-            <div class="col"><input id="building4" type="text" class="form-control inputClass" placeholder="Building 4" onfocus="this.placeholder=''" onblur="this.placeholder='Building 4'" /></div>
-            <div class="col"><input id="building5" type="text" class="form-control inputClass" placeholder="Building 5" onfocus="this.placeholder=''" onblur="this.placeholder='Building 5'" /></div>
-            <div class="col"><input id="building6" type="text" class="form-control inputClass" placeholder="Building 6" onfocus="this.placeholder=''" onblur="this.placeholder='Building 6'" /></div>
+            <div class="col"><input type="text" onkeyup="numberOnly(this)" id="building1" type="text" class="form-control inputClass" placeholder="Building 1" onfocus="this.placeholder=''" onblur="this.placeholder='Building 1'" /></div>
+            <div class="col"><input type="text" onkeyup="numberOnly(this)" id="building2" type="text" class="form-control inputClass" placeholder="Building 2" onfocus="this.placeholder=''" onblur="this.placeholder='Building 2'" /></div>
+            <div class="col"><input type="text" onkeyup="numberOnly(this)" id="building3" type="text" class="form-control inputClass" placeholder="Building 3" onfocus="this.placeholder=''" onblur="this.placeholder='Building 3'" /></div>
+            <div class="col"><input type="text" onkeyup="numberOnly(this)" id="building4" type="text" class="form-control inputClass" placeholder="Building 4" onfocus="this.placeholder=''" onblur="this.placeholder='Building 4'" /></div>
+            <div class="col"><input type="text" onkeyup="numberOnly(this)" id="building5" type="text" class="form-control inputClass" placeholder="Building 5" onfocus="this.placeholder=''" onblur="this.placeholder='Building 5'" /></div>
+            <div class="col"><input type="text" onkeyup="numberOnly(this)" id="building6" type="text" class="form-control inputClass" placeholder="Building 6" onfocus="this.placeholder=''" onblur="this.placeholder='Building 6'" /></div>
 
         </div>
         <br />
@@ -168,6 +168,19 @@
             $("#building7").val("");
             $("#Out").text("");
         })
+        //PREVENT USER FROM TYPING IN NON-NUMBERS
+        function numberOnly(e) {
+            var validChars = /[0-9]/;
+            var strIn = e.value;
+            var strOut = '';
+            for (var i = 0; i < strIn.length; i++) {
+                strOut += (validChars.test(strIn.charAt(i))) ? strIn.charAt(i) : '';
+                // if strIn input doesn't include characters in validChars -> strIn char at i = '' (delete)
+            } // charAt() is a method that returns the character from the specified index. 
+            // Characters in a string are indexed from left to right.
+            //The index of the first character is 0, and the index of the last character in a string, called stringName, is stringName.
+            e.value = strOut;
+        }
     </script>
 </body>
 
